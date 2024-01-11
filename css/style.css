@@ -39,7 +39,7 @@ header {
 /* Section Grid */
 #section-grid {
     background-color: #7fffd4;
-    height: 750px;
+    min-height: 750px;
     padding: 25px 0;
 }
 
