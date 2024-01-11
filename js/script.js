@@ -8,9 +8,8 @@ const selectElement = document.getElementById('user-select');
 const scoreCounter = document.querySelector('strong');
 
 // - 2 Creo le variabili per le righe e le colonne
-const rows = 10;
-const cells = 10;
-const totalCells = rows * cells;
+let rows = 10;
+let cols = 10;
 
 // ? FUNZIONI 
 // - 3 Creo la funzione per la cella
@@ -21,8 +20,8 @@ const createCells = (number) => {
     return newCell;
 };
 
-// - 4 Creo un event listener al submit del form
-formElement.addEventListener('submit', (event) => {
+// - 22 Creo la funzione startGame
+const startGame = (event) => {
 
     // - 12 Evito che ricarichi la pagina
     event.preventDefault();
@@ -36,9 +35,7 @@ formElement.addEventListener('submit', (event) => {
     // - 13 Creo una variabile per il valore della select
     const level = selectElement.value;
 
-    // - 2 Creo le variabili per le righe e le colonne
-    let rows = 10;
-    let cols = 10;
+
 
     // - 14 Creo lo switch per le difficoltà
     switch (level) {
@@ -95,4 +92,13 @@ formElement.addEventListener('submit', (event) => {
         // - 10 Stampo in pagina le celle
         resultElement.appendChild(newCells);
     }
-});
+
+    // - 23 Creo una variabile per il numero di bombe
+    const totalBombs = 16;
+
+    // - 24 Creo una variabile per il punteggio più alto
+    const maxScore = totalCells - totalBombs;
+}
+
+// - 4 Creo un event listener al submit del form
+formElement.addEventListener('submit', startGame);
