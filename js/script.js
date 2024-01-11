@@ -85,6 +85,21 @@ const startGame = (event) => {
                 console.log(message);
             }
 
+            // - 29 Creo un if per aggiungere la classe bomb alle celle dentro l'array
+            if (bombs.includes(parseInt(newCells.innerText))) {
+                newCells.classList.add('bomb');
+            }
+
+            // - 30 Creo un if per determinare la sconfitta
+            if (newCells.classList.contains('bomb')) {
+                alert('Hai perso il tuo punteggi è: ' + score);
+            }
+
+            // - 31 Creo un if per stabilire se l'utente ha vinto
+            if (score === maxScore) {
+                alert('Complimenti, hai vinto. Il tuo punteggio è di: ' + score);
+            }
+
             // - 18 Stampo in pagina lo score
             scoreCounter.innerText = score;
         })
