@@ -66,4 +66,5 @@ header {
 
 .clicked {
     background-color: darkblue;
+    cursor: not-allowed;
 }
