@@ -67,7 +67,6 @@ const startGame = (event) => {
         // - 8 Creo il messaggio da stampare in console al click
         const message = 'Hai cliccato la cella numero: ' + i;
 
-
         // - 6 Creo un event listener al click della cella
         newCells.addEventListener('click', () => {
 
@@ -121,14 +120,14 @@ const startGame = (event) => {
     const createBombs = (max, numberOfBombs, bombList) => {
 
         // - 26 Creo un ciclo while
-        while (bombs.length < numberOfBombs) {
+        while (bombList.length < numberOfBombs) {
 
             // - 27 Creo un numero random
             const randomBombs = Math.floor(Math.random() * max) + 1;
 
             // - 28 Se il numero random non è all'interno della lista allora mettilo nella lista
-            if (!bombs.includes(randomBombs)) {
-                bombs.push(randomBombs);
+            if (!bombList.includes(randomBombs)) {
+                bombList.push(randomBombs);
             }
         }
     }
