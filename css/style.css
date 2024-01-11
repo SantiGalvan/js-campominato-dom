@@ -1,0 +1,69 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Roots */
+:root {
+    --cols-for-rows: 10;
+}
+
+/* General */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Utils */
+.c-wh {
+    color: #fff;
+}
+
+/* Head */
+header {
+    height: 100px;
+}
+
+.left-header img {
+    width: 100px;
+    display: block;
+}
+
+/*? Main */
+
+/* Section Grid */
+#section-grid {
+    background-color: #7fffd4;
+    height: 750px;
+    padding: 25px 0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 700px;
+    margin: 0 auto;
+}
+
+.cell {
+    height: calc(100% / var(--cols-for-rows));
+    width: calc(100% / var(--cols-for-rows));
+    border: 1px solid black;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: darkblue;
+}
