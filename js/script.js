@@ -98,6 +98,29 @@ const startGame = (event) => {
 
     // - 24 Creo una variabile per il punteggio più alto
     const maxScore = totalCells - totalBombs;
+
+    // - 25 Creo un array per contenere le bombe
+    const bombs = [];
+
+    // - 21 Creo una funzione per generare 16 numeri casuali
+    const createBombs = (max, numberOfBombs, bombList) => {
+
+        // - 26 Creo un ciclo while
+        while (bombs.length < numberOfBombs) {
+
+            // - 27 Creo un numero random
+            const randomBombs = Math.floor(Math.random() * max) + 1;
+
+            // - 28 Se il numero random non è all'interno della lista allora mettilo nella lista
+            if (!bombs.includes(randomBombs)) {
+                bombs.push(randomBombs);
+            }
+        }
+    }
+
+
+    createBombs(totalCells, totalBombs, bombs);
+    console.log(bombs);
 }
 
 // - 4 Creo un event listener al submit del form
