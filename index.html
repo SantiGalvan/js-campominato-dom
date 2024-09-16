@@ -42,7 +42,7 @@
                 <h1>Campo Minato</h1>
             </div>
             <div class="right-header d-flex align-items-center">
-                <form class=" d-flex gap-3">
+                <form class="d-flex gap-3">
                     <select class="form-select" id="user-select">
                         <option value="easy">Facile</option>
                         <option value="normal">Normale</option>
@@ -59,11 +59,26 @@
 
         <!-- Section Grid -->
         <section id="section-grid">
+
+            <!-- Score -->
             <div class="score text-center">
                 <h3>Score: <strong></strong></h3>
             </div>
+
+            <!-- Griglia di gioco -->
             <div class="grid">
+                <div class="title">
+                    <h2>Scegli la difficoltà e premi Play</h2>
+                </div>
             </div>
+
+            <!-- Schermata di Game Over -->
+            <div class="game-over d-none position-absolute top-0 start-0 end-0 bottom-0">
+                <h1 class="game-over-text"></h1>
+                <span class="game-over-score">Score: <strong class="finish-score"></strong></span>
+                <a href="" class="btn btn-warning">Riprova</a>
+            </div>
+
         </section>
     </main>
 

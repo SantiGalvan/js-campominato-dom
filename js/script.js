@@ -7,6 +7,10 @@ const formElement = document.querySelector('.right-header form');
 const selectElement = document.getElementById('user-select');
 const scoreCounter = document.querySelector('strong');
 
+const gameOver = document.querySelector('.game-over');
+const gameOverText = document.querySelector('.game-over-text');
+const gameOverScore = document.querySelector('.finish-score');
+
 // - 2 Creo le variabili per le righe e le colonne
 let rows = 10;
 let cols = 10;
@@ -39,9 +43,13 @@ const startGame = (event) => {
 
     // - 14 Creo lo switch per le difficoltà
     switch (level) {
-        case 'normal':
+        case 'easy':
             rows = 9;
             cols = 9;
+            break;
+        case 'normal':
+            rows = 8;
+            cols = 8;
             break;
         case 'hard':
             rows = 7;
@@ -91,12 +99,28 @@ const startGame = (event) => {
 
             // - 30 Creo un if per determinare la sconfitta
             if (newCells.classList.contains('bomb')) {
-                alert('Hai perso il tuo punteggi è: ' + score);
+                // Sistemo lo score
+                score = score - 1;
+
+                // Faccio apparire la schermata di Game Over
+                gameOver.classList.remove('d-none');
+                gameOver.classList.add('d-flex');
+
+                // Stampo la scritta di Game Over con lo score
+                gameOverText.innerText = 'Game Over';
+                gameOverScore.innerText = score;
+
             }
 
             // - 31 Creo un if per stabilire se l'utente ha vinto
             if (score === maxScore) {
-                alert('Complimenti, hai vinto. Il tuo punteggio è di: ' + score);
+                // Faccio apparire la schermata di Game Over
+                gameOver.classList.remove('d-none');
+                gameOver.classList.add('d-flex');
+
+                // Stampo la scritta di Hai Vinto con lo score
+                gameOverText.innerText = 'Hai Vinto, complimenti';
+                gameOverScore.innerText = score;
             }
 
             // - 18 Stampo in pagina lo score
