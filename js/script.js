@@ -44,12 +44,12 @@ const startGame = (event) => {
     // - 14 Creo lo switch per le difficoltà
     switch (level) {
         case 'easy':
-            rows = 9;
-            cols = 9;
+            rows = 10;
+            cols = 10;
             break;
         case 'normal':
-            rows = 8;
-            cols = 8;
+            rows = 9;
+            cols = 9;
             break;
         case 'hard':
             rows = 7;
